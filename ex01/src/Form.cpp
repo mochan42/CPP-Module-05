@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 20:23:05 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 21:10:28 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/28 22:04:50 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Form::Form(const std::string setName, bool setIsSigned, const int setGradeToSign
 	{
 		if ( setGradeToSign < 1 || setGradeToExec < 1 )
 			throw GradeTooHighException();
-		else if ( setGradeToExec > 150 || setGradeToExec > 150 )
+		else if ( setGradeToSign > 150 || setGradeToExec > 150 )
 			throw GradeTooLowException();
 	}
 	catch (std::exception & e)
@@ -62,64 +62,46 @@ Form::~Form()
 
 
 //==== GETTERS / SETTERS ========================================================================
-std::string		Form::getName(void) const
+std::string		Form::getName( void ) const
 {
 	return (this->_name);
 }
 
-bool			Form::getIsSigned(void) const
+bool			Form::getIsSigned( void ) const
 {
 	return (this->_isSigned);
 }
 
-int				Form::getGradeToSign(void) const
+int				Form::getGradeToSign( void ) const
 {
 	return (this->_gradeToSign);
 }
 
-int				Form::getGradeToExec(void) const
+int				Form::getGradeToExec( void ) const
 {
 	return (this->_gradeToExec);
 }
 
 //======== MEMBER FUNCTIONS =====================================================================
-// void	Form::incrementGrade( void )
-// {
-// 	try
-// 	{
-// 		if ( _grade < 2)
-// 			throw GradeTooHighException();
-// 		else
-// 		{
-// 			_grade--;
-// 			std::cout << GREEN << "Grade of " << BKLIGRN << getName() << GREEN << " is incremented." << D << "\n";
-// 		}
-// 	}
-// 	catch (std::exception & e)
-// 	{
-// 		std::cout << RED << "Exception caught for " << getName() << " : " << e.what() << D << "\n";
-// 		std::cout << RED << "Grade of " << getName() << " cannot be incremented." << D << "\n";
-// 	}
-// }
-
-// void	Form::decrementGrade( void )
-// {
-// 	try
-// 	{
-// 		if ( _grade > 149)
-// 			throw GradeTooLowException();
-// 		else
-// 		{
-// 			_grade++;
-// 			std::cout << PU << "Grade of " << BKLIGRN << getName() << PU << " is decremented." << D << "\n";
-// 		}
-// 	}
-// 	catch (std::exception & e)
-// 	{
-// 		std::cout << RED << "Exception caught for " << getName() << " : " << e.what() << D << "\n";
-// 		std::cout << RED << "Grade of " << getName() << " cannot be decremented." << D << "\n";
-// 	}
-// }
+void		Form::beSigned(Bureaucrat bureaucrat)
+{
+	try
+	{
+		if ( getGradeToSign() > 150 )
+			throw GradeTooLowException();
+	}
+	catch (std::exception & e)
+	{
+		std::cout << RED << "Exception caught for " << getName() << " : " << e.what() << D << "\n";
+	}
+	if (bureaucrat.getGrade() <= getGradeToSign() )
+	{
+		_isSigned = 1;
+		std::cout << GREEN << "Form " << BKLIGRN << getName() << GREEN << " is signed" << D << "\n";
+	}
+	else
+		std::cout << RED << "Form " << BKLIGRN << getName() << RED << " is not signed" << D << "\n";
+}
 
 
 //=============== FUNCTIONS =====================================================================

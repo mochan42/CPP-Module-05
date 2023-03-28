@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:28:53 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 20:56:58 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/28 22:05:20 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,40 +15,30 @@
 
 int main()
 {
-	Bureaucrat	Louis("Louis", 97);
+	Bureaucrat	Louis("Louis", 80);
+	Bureaucrat	Rene("Rene", 120);
 	Form		flyRequest("Fly-Request", 0, 100, 50);
+	Form		sailingRequest("sailing-Request", 0, 100, 50);
 
-	// Bureaucrat	Jean("Jean", 0);
-	// Bureaucrat	Gaston("Gaston", 151);
-	// Bureaucrat	Sarah("Sarah", 1);
-	// Bureaucrat	Leon("Leon", 150);
+	std::cout << PU << "\n--------- Forms with out of range grades ---------" << D << "\n";
+	Form		fishingRequest("fishing-Request", 0, 0, 50);
+	Form		huntingRequest("hunting-Request", 0, 151, 50);
+	Form		skatingRequest("skating-Request", 0, 50, 0);
+	Form		holidayRequest("holiday-Request", 0, 50, 151);
 
-	// std::cout << "\n--------- Initialization caught by Exception Grade too high ---------\n";
-	// std::cout << Jean << "\n";
-
-	// std::cout << "\n--------- Initialization caught by Exception Grade too low ---------\n";
-	// std::cout << Gaston << "\n";
-
-
-	// std::cout << "\n--------- Increment caught by Exception Grade too low ---------\n";
-	// std::cout << Sarah << "\n";
-	// Sarah.incrementGrade();
-	// std::cout << Sarah << "\n";
-
-	// std::cout << "\n--------- Decrement caught by Exception Grade too low ---------\n";
-	// std::cout << Leon << "\n";
-	// Leon.decrementGrade();
-	// std::cout << Leon << "\n";
-
-	std::cout << "\n--------- Normal Bureaucrat evolution ---------\n";
+	std::cout << PU << "\n--------- Form CAN be signed ---------" << D << "\n";
 	std::cout << Louis << "\n";
 	std::cout << flyRequest << "\n";
-	// Louis.incrementGrade();
-	// Louis.incrementGrade();
-	// std::cout << Louis << "\n";
-	// Louis.decrementGrade();
-	// std::cout << Louis << "\n\n";
+	flyRequest.beSigned(Louis);
+	Louis.signForm(flyRequest);
+	std::cout << flyRequest << "\n";
 	
+	std::cout << PU << "\n--------- Form CANNOT be signed ---------" << D << "\n";
+	std::cout << Rene << "\n";
+	std::cout << sailingRequest << "\n";
+	sailingRequest.beSigned(Rene);
+	std::cout << sailingRequest << "\n";
+	Rene.signForm(sailingRequest);
 
 	return 0;
 }

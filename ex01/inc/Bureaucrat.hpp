@@ -6,13 +6,16 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:25:02 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 19:55:42 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/28 21:46:21 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 #include <iostream>
+#include "Form.hpp"
+
+class	Form;
 
 class	Bureaucrat
 {
@@ -33,6 +36,7 @@ class	Bureaucrat
 		// MEMBER FUNCTIONS
 		void	incrementGrade( void );
 		void	decrementGrade( void );
+		void	signForm( Form& form );
 
 		// An exception should be thrown as an object of a specific type (like a class)
 		// that derives from std::exception or a subclass of std::exception.

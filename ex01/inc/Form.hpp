@@ -6,13 +6,16 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 20:24:28 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 20:59:01 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/28 21:41:48 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef Form_HPP
 #define Form_HPP
 #include <iostream>
+#include "Bureaucrat.hpp"
+
+class Bureaucrat; // to avoid error unknown type name 'Bureaucrat' for the member function beSigned
 
 class	Form
 {
@@ -27,14 +30,13 @@ class	Form
 		Form& operator=(const Form& src);
 
 		// GETTERS - SETTERS
-		std::string	getName(void) const;
-		bool		getIsSigned(void) const;
-		int			getGradeToSign(void) const;
-		int			getGradeToExec(void) const;
+		std::string	getName( void ) const;
+		bool		getIsSigned( void ) const;
+		int			getGradeToSign( void ) const;
+		int			getGradeToExec( void ) const;
 
 		// MEMBER FUNCTIONS
-		// void	incrementGrade( void );
-		// void	decrementGrade( void );
+		void		beSigned(Bureaucrat bureaucrat);
 
 		// An exception should be thrown as an object of a specific type (like a class)
 		// that derives from std::exception or a subclass of std::exception.

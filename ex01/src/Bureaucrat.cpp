@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:24:59 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 21:09:14 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/28 22:07:06 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,13 @@ void	Bureaucrat::decrementGrade( void )
 	}
 }
 
+void	Bureaucrat::signForm( Form& form )
+{
+	if ( form.getIsSigned() == 1 )
+		std::cout << BKLIGRN << getName() << GREEN <<  " signed " << form.getName() << "\n";
+	else
+		std::cout << BKLIGRN << getName() << RED << " couldn't sign " << form.getName() << " because the bureaucrat grade is too low." << "\n";
+}
 
 //=============== FUNCTIONS =====================================================================
 std::ostream& operator<<( std::ostream& outputStream, const Bureaucrat& bureaucrat )

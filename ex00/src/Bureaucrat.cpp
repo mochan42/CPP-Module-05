@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:24:59 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 18:38:05 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/28 19:45:24 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,29 @@
 Bureaucrat::Bureaucrat() : _name ("Random Bureaucrat Name")
 {
 	std::cout << BLU << "Default constructor called from Bureaucrat" << D << "\n";
-	this->_grade = 97;
+	this->_grade = 75;
+}
+
+// e.what() is a member function of the std::exception class.
+// It returns a const char* that represents the explanatory string associated with the exception.
+// This string can be set when the exception is thrown, and it provides information about the exception.
+Bureaucrat::Bureaucrat(const std::string setName, int setGrade) : _name(setName)
+{
+	try
+	{
+		if ( setGrade < 1)
+			throw GradeTooHighException();
+		else if ( setGrade > 150 )
+			throw GradeTooLowException();
+		else
+			_grade = setGrade;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << RED << "Exception caught for " << getName() << " : " << e.what() << D << "\n";
+		std::cout << RED << "Grade of " << getName() << " reseted to lowest value 150." << D << "\n";
+		_grade = 150;
+	}
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& src)
@@ -46,46 +68,54 @@ std::string		Bureaucrat::getName(void) const
 	return (this->_name);
 }
 
-// void	Bureaucrat::setName(const std::string setName) const
-// {
-// 	_name = setName;
-// }
-
 int	Bureaucrat::getGrade(void) const
 {
 	return (this->_grade);
 }
 
-// void	Bureaucrat::setGrade(int setGrade) const
-// {
-// 	_grade = setGrade;
-// }
-
 //======== MEMBER FUNCTIONS =====================================================================
-void	Bureaucrat::GradeTooHighException( void )
-{
-	std::cout << "Grade is too high, maximum grade is 1.\n";
-}
-
-void	Bureaucrat::GradeTooLowException( void )
-{
-	std::cout << "Grade is too low, minimum grade is 150.\n";
-}
-
 void	Bureaucrat::incrementGrade( void )
 {
-	_grade--;
+	try
+	{
+		if ( _grade < 2)
+			throw GradeTooHighException();
+		else
+		{
+			_grade--;
+			std::cout << GREEN << "Grade of " << BKLIGRN << getName() << GREEN << " is incremented." << D << "\n";
+		}
+	}
+	catch (std::exception & e)
+	{
+		std::cout << RED << "Exception caught for " << getName() << " : " << e.what() << D << "\n";
+		std::cout << RED << "Grade of " << getName() << " cannot be incremented." << D << "\n";
+	}
 }
 
 void	Bureaucrat::decrementGrade( void )
 {
-	_grade++;
+	try
+	{
+		if ( _grade > 149)
+			throw GradeTooLowException();
+		else
+		{
+			_grade++;
+			std::cout << PU << "Grade of " << BKLIGRN << getName() << PU << " is decremented." << D << "\n";
+		}
+	}
+	catch (std::exception & e)
+	{
+		std::cout << RED << "Exception caught for " << getName() << " : " << e.what() << D << "\n";
+		std::cout << RED << "Grade of " << getName() << " cannot be decremented." << D << "\n";
+	}
 }
 
 
 //=============== FUNCTIONS =====================================================================
 std::ostream& operator<<( std::ostream& outputStream, const Bureaucrat& bureaucrat )
 {
-	outputStream << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+	outputStream << BKLIGRN << bureaucrat.getName() << YELL << ", bureaucrat grade " << LIGRN << bureaucrat.getGrade() << D;
 	return (outputStream);
 }

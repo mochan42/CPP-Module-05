@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:28:53 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 18:38:30 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/28 19:52:57 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,36 @@
 
 int main()
 {
-	Bureaucrat	Louis;
+	Bureaucrat	Louis("Louis", 97);
+	Bureaucrat	Jean("Jean", 0);
+	Bureaucrat	Gaston("Gaston", 151);
+	Bureaucrat	Sarah("Sarah", 1);
+	Bureaucrat	Leon("Leon", 150);
 
+	std::cout << "\n--------- Initialization caught by Exception Grade too high ---------\n";
+	std::cout << Jean << "\n";
+
+	std::cout << "\n--------- Initialization caught by Exception Grade too low ---------\n";
+	std::cout << Gaston << "\n";
+
+
+	std::cout << "\n--------- Increment caught by Exception Grade too low ---------\n";
+	std::cout << Sarah << "\n";
+	Sarah.incrementGrade();
+	std::cout << Sarah << "\n";
+
+	std::cout << "\n--------- Decrement caught by Exception Grade too low ---------\n";
+	std::cout << Leon << "\n";
+	Leon.decrementGrade();
+	std::cout << Leon << "\n";
+
+	std::cout << "\n--------- Normal Bureaucrat evolution ---------\n";
 	std::cout << Louis << "\n";
+	Louis.incrementGrade();
+	Louis.incrementGrade();
+	std::cout << Louis << "\n";
+	Louis.decrementGrade();
+	std::cout << Louis << "\n\n";
+
 	return 0;
 }

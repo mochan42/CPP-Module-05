@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:24:59 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 19:45:24 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/28 21:08:45 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Bureaucrat::Bureaucrat() : _name ("Random Bureaucrat Name")
 // This string can be set when the exception is thrown, and it provides information about the exception.
 Bureaucrat::Bureaucrat(const std::string setName, int setGrade) : _name(setName)
 {
+	std::cout << BLU << "Initialized constructor called from Bureaucrat" << D << "\n";
 	try
 	{
 		if ( setGrade < 1)

@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:24:59 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 14:16:21 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/28 18:38:05 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,12 @@ void	Bureaucrat::incrementGrade( void )
 void	Bureaucrat::decrementGrade( void )
 {
 	_grade++;
+}
+
+
+//=============== FUNCTIONS =====================================================================
+std::ostream& operator<<( std::ostream& outputStream, const Bureaucrat& bureaucrat )
+{
+	outputStream << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+	return (outputStream);
 }

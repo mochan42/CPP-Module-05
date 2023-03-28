@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:25:02 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 14:15:21 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/28 18:37:14 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ class	Bureaucrat
 		const std::string	_name;
 		int					_grade;
 };
+
+std::ostream& operator<<( std::ostream& outputStream, const Bureaucrat& bureaucrat );
 
 #endif

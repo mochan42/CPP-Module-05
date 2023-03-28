@@ -6,12 +6,12 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 20:24:28 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 21:41:48 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/28 22:29:49 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Form_HPP
-#define Form_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 #include <iostream>
 #include "Bureaucrat.hpp"
 

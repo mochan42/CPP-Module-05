@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:28:53 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 19:40:08 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/29 20:21:37 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int main()
 {
 	Bureaucrat				Louis("Louis", 80);
-	Bureaucrat				Pierre("Pierre", 140);
+	Bureaucrat				Pierre("Pierre", 138);
 	Bureaucrat				Gaston("Gaston", 146);
 	ShrubberyCreationForm	ShruberryForm_1("draw_tree_1");
 	ShrubberyCreationForm	ShruberryForm_2("draw_tree_2");

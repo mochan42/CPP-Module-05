@@ -6,13 +6,15 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:37:45 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 19:48:04 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/29 20:18:35 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_H_HPP
 #define SHRUBBERYCREATIONFORM_H_HPP
 #include <iostream>
+#include <fstream> // header file for file I/O
+#include <string>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 

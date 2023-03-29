@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:23:01 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 23:04:39 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/29 23:31:54 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ Intern::~Intern()
 
 
 //======== MEMBER FUNCTIONS =====================================================================
-void	Intern::makeForm( std::string form, std::string target )
+AForm*	Intern::makeForm( std::string form, std::string target )
 {
+	AForm*	tmp = NULL;
 	std::string	form_list[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
 	int i = 1;
 
@@ -51,27 +52,22 @@ void	Intern::makeForm( std::string form, std::string target )
 			break;
 		i++;
 	}
-	std::cout << "i = " << i << "\n";
 	switch(i)
 	{
 		case 1:
-			{
-				std::cout << "Intern creates ShrubberyCreationForm with " + target << "\n";
-			}
+			tmp = new ShrubberyCreationForm(target);
 			break;
 		case 2:
-			{
-				std::cout << "Intern creates RobotomyRequestForm with " + target << "\n";
-			}
+			tmp = new RobotomyRequestForm(target);
 			break;
 		case 3:
-			{
-				std::cout << "Intern creates PresidentialPardonForm with " + target << "\n";
-			}
+			tmp = new PresidentialPardonForm(target);
 			break;
 		default:
 			std::cout << RED << "/!\\ WRONG FORM /!\\" << D << "\n";
 			break;
 	}
+	std::cout << "Intern creates " << form << "\n";
+	return (tmp);
 }
 

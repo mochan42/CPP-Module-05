@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:29:09 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 22:31:28 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/29 17:57:48 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //======== CONSTRUCTORS =========================================================================
 
 AForm::AForm()
-	: _name ("Random AForm Name"), _isSigned (0), _gradeToSign (1), _gradeToExec (1)
+	: _name ("Random AForm Name"), _isSigned (false), _gradeToSign (1), _gradeToExec (1)
 {
 	std::cout << BLU << "Default constructor called from AForm" << D << "\n";
 }
@@ -24,14 +24,14 @@ AForm::AForm()
 // It returns a const char* that represents the explanatory string associated with the exception.
 // This string can be set when the exception is thrown, and it provides inAFormation about the exception.
 AForm::AForm(const std::string setName, bool setIsSigned, const int setGradeToSign, const int setGradeToExec)
-	: _name(setName), _isSigned (setIsSigned), _gradeToSign (setGradeToSign), _gradeToExec (setGradeToExec)
+	: _name(setName), _isSigned(setIsSigned), _gradeToSign(setGradeToSign), _gradeToExec(setGradeToExec)
 {
 	std::cout << BLU << "Initialized constructor called from AForm" << D << "\n";
 	try
 	{
-		if ( setGradeToSign < 1 || setGradeToExec < 1 )
+		if ( getGradeToSign() < 1 || getGradeToExec() < 1 )
 			throw GradeTooHighException();
-		else if ( setGradeToSign > 150 || setGradeToExec > 150 )
+		else if ( getGradeToSign() > 150 || getGradeToExec() > 150 )
 			throw GradeTooLowException();
 	}
 	catch (std::exception & e)
@@ -82,6 +82,12 @@ int				AForm::getGradeToExec( void ) const
 	return (this->_gradeToExec);
 }
 
+void			AForm::setIsSigned( bool setBool )
+{
+	_isSigned = setBool;
+}
+
+
 //======== MEMBER FUNCTIONS =====================================================================
 void		AForm::beSigned(Bureaucrat bureaucrat)
 {
@@ -96,7 +102,7 @@ void		AForm::beSigned(Bureaucrat bureaucrat)
 	}
 	if (bureaucrat.getGrade() <= getGradeToSign() )
 	{
-		_isSigned = 1;
+		this->_isSigned = true;
 		std::cout << GREEN << "AForm " << BKLIGRN << getName() << GREEN << " is signed" << D << "\n";
 	}
 	else

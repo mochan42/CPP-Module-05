@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:24:59 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 22:07:06 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/29 18:14:38 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void	Bureaucrat::decrementGrade( void )
 	}
 }
 
-void	Bureaucrat::signForm( Form& form )
+void	Bureaucrat::signForm( AForm& form )
 {
 	if ( form.getIsSigned() == 1 )
 		std::cout << BKLIGRN << getName() << GREEN <<  " signed " << form.getName() << "\n";
@@ -121,9 +121,15 @@ void	Bureaucrat::signForm( Form& form )
 		std::cout << BKLIGRN << getName() << RED << " couldn't sign " << form.getName() << " because the bureaucrat grade is too low." << "\n";
 }
 
+void	Bureaucrat::executeForm( AForm const & form )
+{
+	std::cout << BKLIGRN << getName() << GREEN <<  " executes random Form " << form.getName() << "\n";
+}
+
+
 //=============== FUNCTIONS =====================================================================
 std::ostream& operator<<( std::ostream& outputStream, const Bureaucrat& bureaucrat )
 {
-	outputStream << BKLIGRN << bureaucrat.getName() << YELL << ", bureaucrat grade " << LIGRN << bureaucrat.getGrade() << D;
+	outputStream << BKLIGRN << bureaucrat.getName() << YELL << ", bureaucrat grade " << LIGRN << bureaucrat.getGrade() << D << "\n";
 	return (outputStream);
 }

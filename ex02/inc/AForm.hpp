@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:29:22 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 22:30:26 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/29 17:56:37 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,22 @@ class	AForm
 		// CONSTRUCTORS - DESTRUCTOR
 		AForm(); // Default constructor
 		AForm(const std::string setName, bool setIsSigned, const int setGradeToSign, const int setGradeToExec);
-		AForm(const Form& other); // Default copy constructor
+		AForm(const AForm& other); // Default copy constructor
 		~AForm(); // Destructor
 
 		// OVERLOAD OPERATOR
-		AForm& operator=(const Form& src);
+		AForm& operator=(const AForm& src);
 
 		// GETTERS - SETTERS
 		std::string	getName( void ) const;
 		bool		getIsSigned( void ) const;
 		int			getGradeToSign( void ) const;
 		int			getGradeToExec( void ) const;
+		void		setIsSigned( bool setBool );
 
 		// MEMBER FUNCTIONS
-		void		beSigned(Bureaucrat bureaucrat) = 0;
+		virtual void		beSigned(Bureaucrat bureaucrat) = 0;
+		virtual void		execute(Bureaucrat const & obj) const = 0;
 
 		// An exception should be thrown as an object of a specific type (like a class)
 		// that derives from std::exception or a subclass of std::exception.
@@ -67,6 +69,6 @@ class	AForm
 		const int		_gradeToExec;
 };
 
-std::ostream& operator<<( std::ostream& outputStream, const Form& Form );
+std::ostream& operator<<( std::ostream& outputStream, const AForm& Form );
 
 #endif

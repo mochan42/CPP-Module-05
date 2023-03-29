@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:28:53 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 22:05:20 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/29 18:27:55 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,19 @@ int main()
 	Form		holidayRequest("holiday-Request", 0, 50, 151);
 
 	std::cout << PU << "\n--------- Form CAN be signed ---------" << D << "\n";
-	std::cout << Louis << "\n";
-	std::cout << flyRequest << "\n";
+	std::cout << Louis;
+	std::cout << flyRequest;
 	flyRequest.beSigned(Louis);
 	Louis.signForm(flyRequest);
-	std::cout << flyRequest << "\n";
+	std::cout << flyRequest;
 	
 	std::cout << PU << "\n--------- Form CANNOT be signed ---------" << D << "\n";
-	std::cout << Rene << "\n";
-	std::cout << sailingRequest << "\n";
+	std::cout << Rene;
+	std::cout << sailingRequest;
 	sailingRequest.beSigned(Rene);
-	std::cout << sailingRequest << "\n";
+	std::cout << sailingRequest;
 	Rene.signForm(sailingRequest);
+	std::cout << "\n";
 
 	return 0;
 }

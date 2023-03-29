@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:24:59 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 22:07:06 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/29 18:26:28 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,6 @@ void	Bureaucrat::signForm( Form& form )
 //=============== FUNCTIONS =====================================================================
 std::ostream& operator<<( std::ostream& outputStream, const Bureaucrat& bureaucrat )
 {
-	outputStream << BKLIGRN << bureaucrat.getName() << YELL << ", bureaucrat grade " << LIGRN << bureaucrat.getGrade() << D;
+	outputStream << BKLIGRN << bureaucrat.getName() << YELL << ", bureaucrat grade " << LIGRN << bureaucrat.getGrade() << D << "\n";
 	return (outputStream);
 }

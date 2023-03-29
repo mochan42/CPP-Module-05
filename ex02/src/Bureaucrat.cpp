@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:24:59 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 19:45:07 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/29 21:15:20 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,9 +124,9 @@ void	Bureaucrat::signForm( AForm& form )
 void	Bureaucrat::executeForm( AForm const & form )
 {
 	if (form.execute(*this))
-		std::cout << GREEN << "Bureaucrat " << BKLIGRN << getName() << GREEN << "successfully executed " << form.getName() << D << "\n";
+		std::cout << GREEN << "Bureaucrat " << BKLIGRN << getName() << GREEN << " successfully executed " << form.getName() << D << "\n";
 	else
-		std::cout << RED << "Bureaucrat " << BKLIGRN << getName() << RED << "could NOT execute " << form.getName() << D << "\n";
+		std::cout << RED << "Bureaucrat " << BKLIGRN << getName() << RED << " could NOT execute " << form.getName() << D << "\n";
 }
 
 

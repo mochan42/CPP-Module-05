@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:29:09 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 19:51:44 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/29 21:06:43 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void		AForm::beSigned(Bureaucrat bureaucrat)
 {
 	try
 	{
-		if ( getGradeToSign() > 150 )
+		if ( bureaucrat.getGrade() > getGradeToSign() )
 			throw GradeTooLowException();
 	}
 	catch (std::exception & e)

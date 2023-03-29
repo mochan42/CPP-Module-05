@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:40:26 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 20:42:35 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/29 21:30:12 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string const target)
 	: AForm("Random ShrubberyCreationForm Name", false, 145, 137), _target(target)
 {
 	std::cout << BLU << "Initialized constructor called from ShrubberyCreationForm" << D << "\n";
-	this->_target = (_target + "_shrubbery");
+	this->_target = (target + "_shrubbery");
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& src)
@@ -61,7 +61,7 @@ void		ShrubberyCreationForm::beSigned(Bureaucrat bureaucrat)
 {
 	try
 	{
-		if ( getGradeToSign() > 145 )
+		if ( bureaucrat.getGrade() > getGradeToSign() )
 			throw GradeTooLowException();
 	}
 	catch (std::exception & e)

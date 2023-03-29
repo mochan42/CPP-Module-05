@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:29:09 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 17:57:48 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/29 19:51:44 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,31 @@ void		AForm::beSigned(Bureaucrat bureaucrat)
 		std::cout << RED << "AForm " << BKLIGRN << getName() << RED << " is not signed" << D << "\n";
 }
 
+bool		AForm::execute(Bureaucrat const & obj) const
+{
+	bool	formIsExecuted = false;
+
+	try
+	{
+		if (getIsSigned() == false)
+			throw GradeTooLowException();
+	}
+	catch (std::exception & e)
+	{
+		std::cout << RED << "Exception caught for " << getName() << " : " << e.what() << D << "\n";
+	}
+	if (getIsSigned() == true && obj.getGrade() <= getGradeToExec() )
+	{
+		std::cout << GREEN << "Bureaucrat " << BKLIGRN << obj.getName() << GREEN << " authorized to execute form" << D << "\n";
+		formIsExecuted = true;
+		return (formIsExecuted);
+	}
+	else
+	{
+		std::cout << RED << "Bureaucrat " << BKLIGRN << obj.getName() << RED << " NOT authorized to execute form" << D << "\n";
+		return (formIsExecuted);
+	}
+}
 
 //=============== FUNCTIONS =====================================================================
 std::ostream& operator<<( std::ostream& outputStream, const AForm& AForm )

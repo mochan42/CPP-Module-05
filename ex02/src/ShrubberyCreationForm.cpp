@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:40:26 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 18:20:11 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/29 19:52:06 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,26 +50,6 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 
 //==== GETTERS / SETTERS ========================================================================
-// std::string		ShrubberyCreationForm::getName( void ) const
-// {
-// 	return (this->_name);
-// }
-
-// bool			ShrubberyCreationForm::getIsSigned( void ) const
-// {
-// 	return (this->_isSigned);
-// }
-
-// int				ShrubberyCreationForm::getGradeToSign( void ) const
-// {
-// 	return (this->_gradeToSign);
-// }
-
-// int				ShrubberyCreationForm::getGradeToExec( void ) const
-// {
-// 	return (this->_gradeToExec);
-// }
-
 std::string	ShrubberyCreationForm::getTarget(void) const
 {
 	return (this->_target);
@@ -97,12 +77,31 @@ void		ShrubberyCreationForm::beSigned(Bureaucrat bureaucrat)
 		std::cout << RED << "ShrubberyCreationForm " << BKLIGRN << getName() << RED << " is not signed" << D << "\n";
 }
 
-void		ShrubberyCreationForm::execute(Bureaucrat const & obj) const
+bool		ShrubberyCreationForm::execute(Bureaucrat const & obj) const
 {
-	(void) obj;
-	std::cout << YELL << "ShrubberyCreationForm " << BKLIGRN << getName() << YELL <<  " executes Shrubbery action " << D << "\n";
-}
+	bool	formIsExecuted = false;
 
+	try
+	{
+		if (getIsSigned() == false)
+			throw GradeTooLowException();
+	}
+	catch (std::exception & e)
+	{
+		std::cout << RED << "Exception caught for " << getName() << " : " << e.what() << D << "\n";
+	}
+	if (getIsSigned() == true && obj.getGrade() <= getGradeToExec() )
+	{
+		std::cout << GREEN << "Bureaucrat " << BKLIGRN << obj.getName() << GREEN << " authorized to draw Tree" << D << "\n";
+		formIsExecuted = true;
+		return (formIsExecuted);
+	}
+	else
+	{
+		std::cout << RED << "Bureaucrat " << BKLIGRN << obj.getName() << RED << " NOT authorized to draw Tree" << D << "\n";
+		return (formIsExecuted);
+	}
+}
 
 //=============== FUNCTIONS =====================================================================
 std::ostream& operator<<( std::ostream& outputStream, const ShrubberyCreationForm& ShrubberyCreationForm )

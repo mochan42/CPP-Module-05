@@ -22,7 +22,8 @@ END_COLOR			:= \033[0;39m
 # SOURCES
 
 SRC_FILES			:= Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp\
-						RobotomyRequestForm.cpp main.cpp
+						RobotomyRequestForm.cpp PresidentialPardonForm.cpp\
+						main.cpp
 
 OBJ_FILES			:= ${SRC_FILES:.cpp=.o}
 

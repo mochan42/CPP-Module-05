@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.h                              :+:      :+:    :+:   */
+/*   PresidentialPardonForm.h                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 20:53:51 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 21:59:31 by mochan           ###   ########.fr       */
+/*   Created: 2023/03/29 21:59:29 by mochan            #+#    #+#             */
+/*   Updated: 2023/03/29 22:00:07 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_H
-#define ROBOTOMYREQUESTFORM_H
+#ifndef PRESIDENTIALPARDONFORM_H
+#define PRESIDENTIALPARDONFORM_H
 
-#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 // *** COLORS ***//
 # define BLANK "\e[0m"

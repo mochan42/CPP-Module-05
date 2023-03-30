@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 21:56:49 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 22:07:45 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/30 19:07:43 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ std::string	PresidentialPardonForm::getTarget(void) const
 
 
 //======== MEMBER FUNCTIONS =====================================================================
-void		PresidentialPardonForm::beSigned(Bureaucrat bureaucrat)
+void		PresidentialPardonForm::beSigned(Bureaucrat& bureaucrat)
 {
 	try
 	{

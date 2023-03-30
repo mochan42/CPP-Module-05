@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 20:49:27 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 21:43:02 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/30 19:09:54 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ std::string	RobotomyRequestForm::getTarget(void) const
 
 
 //======== MEMBER FUNCTIONS =====================================================================
-void		RobotomyRequestForm::beSigned(Bureaucrat bureaucrat)
+void		RobotomyRequestForm::beSigned(Bureaucrat& bureaucrat)
 {
 	try
 	{

@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:29:22 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/30 12:33:29 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/30 19:08:42 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class	AForm
 		void				setIsSigned( bool setBool );
 
 		// MEMBER FUNCTIONS
-		virtual void		beSigned(Bureaucrat bureaucrat) = 0;
+		virtual void		beSigned(Bureaucrat& bureaucrat) = 0;
 		virtual bool		execute(Bureaucrat const & obj) const = 0;
 
 		// An exception should be thrown as an object of a specific type (like a class)

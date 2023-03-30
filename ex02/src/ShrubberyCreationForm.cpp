@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:40:26 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 21:30:12 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/30 19:06:45 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ std::string	ShrubberyCreationForm::getTarget(void) const
 
 
 //======== MEMBER FUNCTIONS =====================================================================
-void		ShrubberyCreationForm::beSigned(Bureaucrat bureaucrat)
+void		ShrubberyCreationForm::beSigned(Bureaucrat& bureaucrat)
 {
 	try
 	{

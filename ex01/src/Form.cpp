@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 20:23:05 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/30 12:12:45 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/30 19:04:55 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int				Form::getGradeToExec( void ) const
 }
 
 //======== MEMBER FUNCTIONS =====================================================================
-void		Form::beSigned(Bureaucrat bureaucrat)
+void		Form::beSigned(Bureaucrat& bureaucrat)
 {
 	try
 	{

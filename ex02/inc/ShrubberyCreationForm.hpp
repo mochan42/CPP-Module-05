@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:37:45 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 20:56:29 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/30 19:06:36 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class	ShrubberyCreationForm : public AForm
 		std::string	getTarget(void) const;
 
 		// MEMBER FUNCTIONS
-		void		beSigned(Bureaucrat bureaucrat);
+		void		beSigned(Bureaucrat& bureaucrat);
 		bool		execute(Bureaucrat const & obj) const;
 
 	private:

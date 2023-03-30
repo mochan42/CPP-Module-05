@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 20:24:28 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/30 12:12:01 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/30 19:04:43 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class	Form
 		int					getGradeToExec( void ) const;
 
 		// MEMBER FUNCTIONS
-		void		beSigned(Bureaucrat bureaucrat);
+		void		beSigned(Bureaucrat& bureaucrat);
 
 		// An exception should be thrown as an object of a specific type (like a class)
 		// that derives from std::exception or a subclass of std::exception.

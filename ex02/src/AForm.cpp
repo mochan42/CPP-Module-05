@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:29:09 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/30 12:19:34 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/30 19:05:52 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void			AForm::setIsSigned( bool setBool )
 
 
 //======== MEMBER FUNCTIONS =====================================================================
-void		AForm::beSigned(Bureaucrat bureaucrat)
+void		AForm::beSigned(Bureaucrat& bureaucrat)
 {
 	try
 	{

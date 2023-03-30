@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 20:54:54 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 21:40:10 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/30 19:07:01 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class	RobotomyRequestForm : public AForm
 		std::string	getTarget(void) const;
 
 		// MEMBER FUNCTIONS
-		void		beSigned(Bureaucrat bureaucrat);
+		void		beSigned(Bureaucrat& bureaucrat);
 		bool		execute(Bureaucrat const & obj) const;
 
 	private:

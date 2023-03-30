@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 20:24:28 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/28 22:29:49 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/30 12:12:01 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ class	Form
 		Form& operator=(const Form& src);
 
 		// GETTERS - SETTERS
-		std::string	getName( void ) const;
-		bool		getIsSigned( void ) const;
-		int			getGradeToSign( void ) const;
-		int			getGradeToExec( void ) const;
+		const std::string	getName( void ) const;
+		bool				getIsSigned( void ) const;
+		int					getGradeToSign( void ) const;
+		int					getGradeToExec( void ) const;
 
 		// MEMBER FUNCTIONS
 		void		beSigned(Bureaucrat bureaucrat);
@@ -61,10 +61,10 @@ class	Form
 		};
 
 	private:
-		std::string		_name;
-		bool			_isSigned;
-		const int		_gradeToSign;
-		const int		_gradeToExec;
+		const std::string	_name;
+		bool				_isSigned;
+		const int			_gradeToSign;
+		const int			_gradeToExec;
 };
 
 std::ostream& operator<<( std::ostream& outputStream, const Form& Form );

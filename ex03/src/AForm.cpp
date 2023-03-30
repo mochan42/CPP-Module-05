@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:29:09 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 21:06:43 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/30 12:33:39 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ AForm::AForm(const AForm& src)
 AForm&	AForm::operator=(const AForm& src)
 {
 	std::cout << BLU << "Copy assignment operator called from AForm" << D << "\n";
-	this->_name =src._name;
 	this->_isSigned =src._isSigned;
 	return (*this);
 }
@@ -62,7 +61,7 @@ AForm::~AForm()
 
 
 //==== GETTERS / SETTERS ========================================================================
-std::string		AForm::getName( void ) const
+const std::string		AForm::getName( void ) const
 {
 	return (this->_name);
 }

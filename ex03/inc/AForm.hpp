@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:29:22 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 19:48:16 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/30 11:58:15 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	AForm
 		AForm(); // Default constructor
 		AForm(const std::string setName, bool setIsSigned, const int setGradeToSign, const int setGradeToExec);
 		AForm(const AForm& other); // Default copy constructor
-		~AForm(); // Destructor
+		virtual ~AForm(); // Destructor (virtual)
 
 		// OVERLOAD OPERATOR
 		AForm& operator=(const AForm& src);

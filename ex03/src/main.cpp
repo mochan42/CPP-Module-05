@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:28:53 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/29 23:40:18 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/30 11:58:04 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int main()
 	Jerry.signForm(*form_2);
 	Jerry.executeForm(*form_2);
 
-
 	std::cout << PU << "\n---------- Intern 3: PresidentialPardonForm ----------" << D << "\n";
 	Bureaucrat	Carl("Carl", 2);
 	Intern	intern_3;
@@ -51,5 +50,8 @@ int main()
 	Carl.signForm(*form_3);
 	Carl.executeForm(*form_3);
 
+	delete form_1;
+	delete form_2;
+	delete form_3;
 	return 0;
 }

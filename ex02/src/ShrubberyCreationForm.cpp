@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:40:26 by mochan            #+#    #+#             */
-/*   Updated: 2023/03/30 19:06:45 by mochan           ###   ########.fr       */
+/*   Updated: 2023/03/30 19:13:29 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ bool		ShrubberyCreationForm::execute(Bureaucrat const & obj) const
 		std::cout << GREEN << "Bureaucrat " << BKLIGRN << obj.getName() << GREEN << " authorized to draw Tree" << D << "\n";
 		std::ofstream outputFile;
 
-		outputFile.open(_target);
+		outputFile.open(_target.c_str());
 
 		// ASCII art string
 		std::string treeArt =
